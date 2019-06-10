@@ -1,10 +1,7 @@
-import { REQUEST_ENTRY_SINGLE, GET_ENTRY_SINGLE_SUCCESS, GET_ENTRY_SINGLE_FAILURE } from "./types";
 import axios from "axios";
+import { SPACE_ID, ENVIROMENT_ID, ACCESS_TOKEN } from "../constants";
+import { REQUEST_ENTRY_SINGLE, GET_ENTRY_SINGLE_SUCCESS, GET_ENTRY_SINGLE_FAILURE } from "./types";
 
-const SPACE_ID = "vhdsczpqp6a0";
-const ENVIROMENT_ID = "master";
-const ACCESS_TOKEN = "S1_ZZcjX2qDUQNoMxc67gOzQIWUTdDWgJN19FVyaaBA";
-const ENTRY_ID = "";
 export const getSingleEntry = props => dispatch => {
 	dispatch({ type: REQUEST_ENTRY_SINGLE });
 	return axios({
