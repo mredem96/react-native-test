@@ -5,6 +5,7 @@ import moment from "moment";
 import Spinner from "react-native-loading-spinner-overlay";
 import { getSingleEntry } from "../../actions/EntrySingleActions";
 import { styles } from "../../styles";
+import { ScrollView } from "react-native-gesture-handler";
 
 class DetailsScreen extends React.Component {
 	constructor(props) {
@@ -22,7 +23,7 @@ class DetailsScreen extends React.Component {
 		const { data, loading } = this.props.entrySingle;
 
 		return (
-			<View style={styles.container}>
+			<ScrollView style={styles.container}>
 				{data ? (
 					<View style={styles.DetailsContainer}>
 						<View style={styles.DetailsHeaderContainer}>
@@ -37,7 +38,7 @@ class DetailsScreen extends React.Component {
 					</View>
 				) : null}
 				<Spinner visible={loading} textContent={"Loading..."} textStyle={styles.spinnerTextStyle} />
-			</View>
+			</ScrollView>
 		);
 	}
 	_handleDate = date => {
